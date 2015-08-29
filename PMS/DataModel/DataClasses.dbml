@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PMS" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=MAYTOAN\SQL2008;Initial Catalog=PMS;Persist Security Info=True;User ID=sa" SettingsObjectName="PMS.Properties.Settings" SettingsPropertyName="PMSConnectionString3" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BenhNhan" Member="BenhNhans">
+    <Type Name="BenhNhan">
+      <Column Name="ID" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenBN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="SoDT" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="NgayKhamLanDau" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PQNhom" Member="PQNhoms">
+    <Type Name="PQNhom">
+      <Column Name="IDNhomND" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDChucNang" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Xem" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Them" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Sua" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Xoa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Tim" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Duyet" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChucNang" Member="ChucNangs">
+    <Type Name="ChucNang">
+      <Column Name="IDChucNang" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="KyHieu" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TenHienThi" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="CapHienThi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDCha" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaMenuCha" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SapXep" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MacDinh" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SuDung" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Comment" Member="Comments">
+    <Type Name="Comment">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ChiTiet" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CTBenhNhanComplaint" Member="CTBenhNhanComplaints">
+    <Type Name="CTBenhNhanComplaint">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDCTBenhNhan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDComplaint" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TenComplaint" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CTBenhNhanConditionDicsJoint" Member="CTBenhNhanConditionDicsJoints">
+    <Type Name="CTBenhNhanConditionDicsJoint">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDCTBenhNhan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DiscJoint" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Degenerated" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Bulging" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Herniated" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Spondyjo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Stenosis" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FacetSyndrome" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CTBenhNhanConditions" Member="CTBenhNhanConditions">
+    <Type Name="CTBenhNhanCondition">
+      <Column Name="IDCondition" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDCTBenhNhan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ankle" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Elbow" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FootPronation" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FootSupination" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FootPlantar" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Hip" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="KneeMeniscus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="KneeACL" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="KneeMCL" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="KneeDegeneration" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PostureKyphosis" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PostureHyperLordosis" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SacroiliacNormail" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SacroiliacInbalance" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SacroiliacInflammation" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SacroiliacDegeneration" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ScoliosisCervival" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ScoliosisCervico" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ScoliosisThoracic" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ScoliosisThoracolumbar" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ScoliosisLumbar" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShoulderBursitis" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShoulderACJoint" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShoulderRotator" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShoulderImpingement" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShoulderAdhesive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Wrist" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CTBenhNhanSnapShot" Member="CTBenhNhanSnapShots">
+    <Type Name="CTBenhNhanSnapShot">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDCTBenhNhan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="URL" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CTBenhNhanSnapShotTemplate" Member="CTBenhNhanSnapShotTemplates">
+    <Type Name="CTBenhNhanSnapShotTemplate">
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDCTBenhNhan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="URL" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NguoiDung" Member="NguoiDungs">
+    <Type Name="NguoiDung">
+      <Column Name="IDNguoiDung" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenDangNhap" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MatKhau" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="MatKhauSalt" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="TenHienThi" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="IsAdmin" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IDNhomND" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="DienThoai" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Mapb" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="KhoRole" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NhomND" Member="NhomNDs">
+    <Type Name="NhomND">
+      <Column Name="IDNhomND" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenNhomND" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="MoTa" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="IsAdminGroup" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Madv" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Parent" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vw_PQNhom" Member="vw_PQNhoms">
+    <Type Name="vw_PQNhom">
+      <Column Name="IDNhomND" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDChucNang" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Xem" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Them" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Sua" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Xoa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Tim" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Duyet" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TenHienThi" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="KyHieu" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CapHienThi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDCha" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CTBenhNhanMRIImage" Member="CTBenhNhanMRIImages">
+    <Type Name="CTBenhNhanMRIImage">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDCTBenhNhan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDMRIImage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TenMRIImage" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CTBenhNhan" Member="CTBenhNhans">
+    <Type Name="CTBenhNhan">
+      <Column Name="IDCTBenhNhan" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDBenhNhan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NoiKham" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="NgayKham" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="TreatmentTime" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TreatmentTimeFor" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TreatmentTimeTotal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CTBenhNhanConditionVertebral" Member="CTBenhNhanConditionVertebrals">
+    <Type Name="CTBenhNhanConditionVertebral">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDCTBenhNhan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vertebrae" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Subluxation" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Mild" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Moderate" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Severe" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Degenerative" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Innervation" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Possible" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="LevelDegeneration" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CTBenhNhanExcercises" Member="CTBenhNhanExcercises">
+    <Type Name="CTBenhNhanExcercise">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDCTBenhNhan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDExcercises" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hold" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Repeat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Do" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Range" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Resistance" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Direction" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Move" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Exercises" Member="Exercises">
+    <Type Name="Exercise">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="TenExercises" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="URLImage" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Images" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="img" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Move" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.InsertImageToCTBenhNhanSnapShot" Method="InsertImageToCTBenhNhanSnapShot">
+    <Parameter Name="img" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_PQNhom" Method="sp_PQNhom">
+    <Parameter Name="IdNhomNd" Parameter="idNhomNd" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_PQNhomResult">
+      <Column Name="IDChucNang" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TenHienThi" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Xem" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Them" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Sua" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Xoa" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Tim" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Duyet" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetDSComments" Method="sp_GetDSComments">
+    <ElementType Name="sp_GetDSCommentsResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ChiTiet" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Selects" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetDSExcerciseByIDCTBN" Method="sp_GetDSExcerciseByIDCTBN">
+    <Parameter Name="IDCTBN" Parameter="iDCTBN" Type="System.String" DbType="NVarChar(20)" />
+    <ElementType Name="sp_GetDSExcerciseByIDCTBNResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDCTBenhNhan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDExcercises" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hold" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Repeat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Do" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Range" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Resistance" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Direction" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Move" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="img" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="TenExercises" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetDSExercises" Method="sp_GetDSExercises">
+    <ElementType Name="sp_GetDSExercisesResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="TenExercises" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="URLImage" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Images" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="img" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="Move" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Prints" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Hold" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Repeat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Do" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Range" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Resistance" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Direction" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
